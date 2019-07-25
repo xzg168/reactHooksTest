@@ -1,0 +1,30 @@
+.shopItem {
+  display: inline-block;
+  padding: 5px 10px;
+  box-shadow: 3px 3px 3px #cccccc;
+}
+.shopItem p {
+  color: #cccccc;
+  font: 12px;
+}
+
+.hasShopItem {
+  margin: 15px 0;
+  line-height: 40px;
+  border-bottom: 1px solid #cccccc;
+}
+.reduceBtn {
+  margin-left: 10px;
+}
+
+.addBtn {
+  margin-right: 10px;
+}
+
+.deleteBtn {
+  margin-left: 30px;
+}
+
+.pic {
+  width: 50px;
+}
