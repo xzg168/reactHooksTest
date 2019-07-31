@@ -15,8 +15,8 @@ const initialCount = {
 export const ShopCartContext = React.createContext(initialCount);
 function ShoppingCart() {
   const [state, dispatch] = useReducer(reducer, initialCount);
-  const localData = localStorage.getItem('hasShopList') || [];
-  const temData = JSON.parse(localData);
+  const localData = localStorage.getItem('hasShopList');
+  const temData = localData ? JSON.parse(localData) : [];
   useEffect(() => {
     http.get('/local/shop/list', {}).then((result: Res) => {
       if (result) {
