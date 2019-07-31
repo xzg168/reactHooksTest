@@ -28,7 +28,7 @@
     "charset": "UTF-8"
   },
   "jest.autoEnable": false,
-  "editor.fontSize": 18,
+  "editor.fontSize": 16,
   "emmet.triggerExpansionOnTab": true,
   "search.usePCRE2": true,
   "markdown-preview-enhanced.previewTheme": "github-light.css",

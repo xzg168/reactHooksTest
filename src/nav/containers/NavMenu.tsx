@@ -23,6 +23,7 @@ class NavMenu extends Component<Props, State> {
       menuList: [
         { key: '0', path: '/shop/list', menuName: '购物车' },
         { key: '1', path: '/user/list', menuName: '用户列表' },
+        { key: '2', path: '/popover/use', menuName: '自定义popover' },
       ],
       selectedKeys: [],
       openKeys: [],
