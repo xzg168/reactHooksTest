@@ -2,7 +2,7 @@
   "name": "antd-react-typescript",
   "version": "0.1.0",
   "private": true,
-  "homepage": " https://xzg168.github.io/reactHooksTest/",
+  "homepage": "https://xzg168.github.io/reactHooksTest/",
   "workspaces": [
     "src/commons/*",
     "src/auth",
