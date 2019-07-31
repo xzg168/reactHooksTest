@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { lazy } from 'react';
-const CreatePopover = lazy(() => import('./CreatePopover'));
-//import CreatePopover from './CreatePopover';
+// const CreatePopover = lazy(() => import('./CreatePopover'));
+import CreatePopover from './CreatePopover';
 interface State {
   detailShow: string;
   x: number;

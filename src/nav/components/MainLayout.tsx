@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Layout } from 'antd';
-import {Suspense} from 'react'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import NavMenu from '../containers/NavMenu';
 import HeaderContainer from '../containers/HeaderContainer';
@@ -31,9 +30,7 @@ export default class MainLayout extends React.PureComponent<Props, State> {
   };
   public render() {
     return (
-      
       <Router>
-        <Suspense fallback='...'>
         <Layout>
           <NavMenu
             collapsed={this.state.collapsed}
@@ -82,9 +79,7 @@ export default class MainLayout extends React.PureComponent<Props, State> {
             </div>
           </Content>
         </Layout>
-        </Suspense>
       </Router>
-      
     );
   }
 }
