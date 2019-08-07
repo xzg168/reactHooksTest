@@ -5,6 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
 import { Button, Welcome } from '@storybook/react/demo';
+import Test from '../Test'
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
@@ -16,4 +17,4 @@ storiesOf('Button', module)
         😀 😎 👍 💯
       </span>
     </Button>
-  ));
+  )).add('Test', () => <Test/>)
