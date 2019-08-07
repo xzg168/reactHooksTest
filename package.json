@@ -81,14 +81,20 @@
     "test": "node scripts/test.js --env=jsdom",
     "start-server": "ts-node --project mock-server/tsconfig.json mock-server/index.ts",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^5.1.10",
+    "@storybook/addon-links": "^5.1.10",
+    "@storybook/react": "^5.1.10",
     "@types/jest": "^24.0.13",
     "@types/node": "^12.0.3",
     "@types/react": "16.8.23",
     "@types/react-dom": "^16.8.4",
     "@types/react-router-redux": "^5.0.18",
+    "@types/storybook__react": "^4.0.2",
     "gh-pages": "^2.0.1",
     "typescript": "^3.4.5"
   },

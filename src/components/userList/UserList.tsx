@@ -44,6 +44,10 @@ function UserList() {
           {
             title: '年龄',
             dataIndex: 'age',
+            sorter: true,
+            defaultSortOrder: 'descend',
+            // sortOrder: 'ascend',
+            sortDirections: ['ascend', 'descend', 'ascend'],
           },
           {
             title: '职业',

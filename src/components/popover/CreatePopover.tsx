@@ -19,7 +19,7 @@ function CreatePopover(props) {
       }}
       onClick={(e) => stopPop(e)}
       //onMouseLeave={(e) => stopPop(e)}
-      onMouseOver={(e) => stopPop(e)}
+      //onMouseEnter={(e) => stopPop(e)}
     >
       <div>
         <div className={styles.popoverArrow} />
