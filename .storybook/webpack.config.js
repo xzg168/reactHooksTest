@@ -21,25 +21,45 @@
 //   },
 // };
 
-
 //全控制模式
 module.exports = async ({ config, mode }) => {
-  config.resolve.extensions=[
-      '.mjs',
-      '.web.ts',
-      '.ts',
-      '.web.tsx',
-      '.tsx',
-      '.web.js',
-      '.js',
-      '.json',
-      '.web.jsx',
-      '.jsx',
+  config.resolve.extensions = [
+    '.mjs',
+    '.web.ts',
+    '.ts',
+    '.web.tsx',
+    '.tsx',
+    '.web.js',
+    '.js',
+    '.json',
+    '.web.jsx',
+    '.jsx',
   ];
-  config.module.rules.push( {
+  config.module.rules.push({
     test: /\.(ts|tsx)$/,
-    loader: require.resolve('babel-loader'),
+    loader: 'babel-loader',
+    options: {
+      presets: ['react'],
+      plugins: [['import', { libraryName: 'antd', style: true }]],
+    },
+  });
+  config.module.rules.push({
+    test: /\.less$/,
+    use: [
+      {
+        loader: 'style-loader',
+      },
+      {
+        loader: 'css-loader',
+      },
+      {
+        loader: 'less-loader',
+        options: {
+          //modifyVars: {"@primary-color": "#000000"}, // 如果要自定义主题样式
+          javascriptEnabled: true,
+        },
+      },
+    ],
   });
   return config;
 };
-
