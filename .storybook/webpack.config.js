@@ -20,9 +20,8 @@
 //     ],
 //   },
 // };
-
 //全控制模式
-module.exports = async ({ config, mode }) => {
+module.exports = async ({ config, mode, defaultConfig }) => {
   config.resolve.extensions = [
     '.mjs',
     '.web.ts',
@@ -35,11 +34,12 @@ module.exports = async ({ config, mode }) => {
     '.web.jsx',
     '.jsx',
   ];
+  config.module.rules[2].use[1].options.modules = true;
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
     loader: 'babel-loader',
     options: {
-      presets: ['react'],
+      presets: ['react-app'],
       plugins: [['import', { libraryName: 'antd', style: true }]],
     },
   });
