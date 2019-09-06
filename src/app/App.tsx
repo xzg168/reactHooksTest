@@ -15,9 +15,7 @@ export default function App() {
     <Provider store={store}>
       <LocaleProvider locale={zh_CN}>
         <Router history={history}>
-          <ConfigProvider
-            getPopupContainer={(triggerNode) => triggerNode.parentElement}
-          >
+          <ConfigProvider>
             <LayoutContainer />
           </ConfigProvider>
         </Router>

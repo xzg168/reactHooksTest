@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { Button, Steps } from 'antd';
+import { Button, Steps, Table } from 'antd';
 import styles from './test.css';
 const { Step } = Steps;
+
 class Test extends React.Component {
   render() {
     console.log('styles', styles);

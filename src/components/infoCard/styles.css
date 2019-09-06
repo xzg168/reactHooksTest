@@ -1,0 +1,35 @@
+.infoCardLayout {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 2px;
+  color: white;
+  background-color: var(--PC);
+  cursor: pointer;
+}
+.infoCardIcon {
+  margin: 0 24px;
+  width: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.infoCardContent {
+  display: flex;
+  height: 40px;
+  flex-direction: column;
+  justify-content: space-around;
+  flex: 1;
+}
+.infoCardCount {
+}
+.infoCardTitle {
+  display: flex;
+  align-items: center;
+  line-height: normal;
+  padding-right: 16px;
+  height: 40px;
+  overflow: hidden;
+}

@@ -21,6 +21,7 @@
 //   },
 // };
 //全控制模式
+const tsImportPluginFactory = require('ts-import-plugin');
 module.exports = async ({ config, mode, defaultConfig }) => {
   config.resolve.extensions = [
     '.mjs',
@@ -35,13 +36,33 @@ module.exports = async ({ config, mode, defaultConfig }) => {
     '.jsx',
   ];
   config.module.rules[2].use[1].options.modules = true;
+  // config.module.rules.push({
+  //   test: /\.(ts|tsx)$/,
+  //   loader: 'babel-loader',
+  //   options: {
+  //     presets: ['react-app'],
+  //     plugins: [['import', { libraryName: 'antd', style: true }]],
+  //   },
+  // });
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
-    loader: 'babel-loader',
-    options: {
-      presets: ['react-app'],
-      plugins: [['import', { libraryName: 'antd', style: true }]],
-    },
+    use: [
+      {
+        loader: require.resolve('ts-loader'),
+        options: {
+          transpileOnly: true,
+          getCustomTransformers: () => ({
+            before: [
+              tsImportPluginFactory({
+                libraryDirectory: 'es',
+                libraryName: 'antd',
+                style: true,
+              }),
+            ],
+          }),
+        },
+      },
+    ],
   });
   config.module.rules.push({
     test: /\.less$/,
@@ -60,6 +81,11 @@ module.exports = async ({ config, mode, defaultConfig }) => {
         },
       },
     ],
+  });
+  config.module.rules.push({
+    test: /\.stories\.jsx?$/,
+    loaders: [require.resolve('@storybook/addon-storysource/loader')],
+    enforce: 'pre',
   });
   return config;
 };
