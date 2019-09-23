@@ -6,6 +6,7 @@ import HeaderContainer from '../containers/HeaderContainer';
 import routes from '../../app/routes';
 import styles from '../Layout.css';
 import User from '../../page/User/types/User';
+import SettingDrawer from '@commons/SettingDrawer';
 const { Header, Content } = Layout;
 
 interface Props {
@@ -77,6 +78,7 @@ export default class MainLayout extends React.PureComponent<Props, State> {
                 </Switch>
               </div>
             </div>
+            <SettingDrawer />
           </Content>
         </Layout>
       </Router>

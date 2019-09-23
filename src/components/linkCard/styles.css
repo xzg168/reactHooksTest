@@ -1,4 +1,4 @@
-.linkCardLayout{
+.linkCardLayout {
   height: 80px;
   width: 87px;
   display: flex;
@@ -10,25 +10,28 @@
   cursor: pointer;
   border-radius: 4px;
   background-color: var(--PC);
+  position: relative;
 }
-.linkCardIcon{
+.linkCardIcon {
   width: 48px;
   height: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.linkCardTitle{
+.linkCardTitle {
   line-height: normal;
 }
-.badgeContent{
+.badgeContent {
   width: 100%;
   display: flex;
   justify-content: flex-end;
   padding-right: 18px;
   padding-top: 5px;
   margin-bottom: -5px;
+  position: absolute;
 }
+
 /* .linkCardLayout :global(.ant-badge-count){
   min-width:10px;
   height:10px;

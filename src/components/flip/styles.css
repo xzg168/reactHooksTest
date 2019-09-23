@@ -1,27 +1,26 @@
-.flipLayout{
+.flipLayout {
   position: relative;
-  height:80px;
+  height: 80px;
 }
-.flipFront,.flipBack{
+.flipFront,
+.flipBack {
   position: absolute;
   top: 0px;
   left: 0px;
   right: 0px;
   bottom: 0px;
   backface-visibility: hidden;
-  -webkit-backface-visibility:hidden;
-  -webkit-transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   z-index: 1;
 }
-.flipBack{
+.flipBack {
   transform: rotateX(180deg);
 }
-.flipLayout:hover >.flipFront{
+.flipLayout:hover > .flipFront {
   transform: rotateX(-180deg);
-  /* transform: scale(-1,1); */
 }
 
-.flipLayout:hover >.flipBack{
+.flipLayout:hover > .flipBack {
   transform: rotateX(0deg);
   z-index: 0;
 }

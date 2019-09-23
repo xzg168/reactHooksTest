@@ -43,6 +43,13 @@ class EmailInfoCard extends React.Component {
             onClick={() => alert('go')}
           />
         </Col>
+        <Col span={4}>
+          <Icon
+            type="taobao-circle"
+            className="primary-color"
+            style={{ fontSize: 40 }}
+          />
+        </Col>
       </Row>
     );
   }
