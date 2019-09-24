@@ -1,8 +1,17 @@
 import * as React from 'react';
 import { Tooltip, Icon } from 'antd';
-import styles from './ThemeColor.css';
+const styles = require('./ThemeColor.css');
 
-const Tag = ({ color, check, ...rest }) => (
+const Tag = ({
+  color,
+  check,
+  ...rest
+}: {
+  color: string;
+  className: string;
+  check: boolean;
+  onClick: () => void;
+}) => (
   <div
     {...rest}
     style={{
@@ -13,7 +22,13 @@ const Tag = ({ color, check, ...rest }) => (
   </div>
 );
 
-const ThemeColor = ({ colors, title, value, onChange }) => {
+interface Props {
+  colors?: object[];
+  title: string;
+  value: string;
+  onChange: (color: string) => void;
+}
+const ThemeColor = ({ colors, title, value, onChange }: Props) => {
   let colorList = colors;
   if (!colors) {
     colorList = [
@@ -63,16 +78,26 @@ const ThemeColor = ({ colors, title, value, onChange }) => {
     <div className={styles.themeColor}>
       <h3 className={styles.title}>{title}</h3>
       <div className={styles.content}>
-        {colorList.map(({ key, color, title }) => (
-          <Tooltip key={color} title={title}>
-            <Tag
-              className={styles.colorBlock}
-              color={color}
-              check={value === color}
-              onClick={() => onChange && onChange(color)}
-            />
-          </Tooltip>
-        ))}
+        {colorList!.map(
+          ({
+            key,
+            color,
+            title,
+          }: {
+            key: string;
+            color: string;
+            title: string;
+          }) => (
+            <Tooltip key={key} title={title}>
+              <Tag
+                className={styles.colorBlock}
+                color={color}
+                check={value === color}
+                onClick={() => onChange && onChange(color)}
+              />
+            </Tooltip>
+          ),
+        )}
       </div>
     </div>
   );
