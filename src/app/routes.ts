@@ -3,6 +3,8 @@ import UserList from '../components/userList/UserList';
 import PopoverUse from '../components/popover/PopoverUse';
 import TodoInfoList from '../demos/TodoInfoList';
 import EmailInfoCard from '../demos/EmailInfoCard';
+import ReactDndTest  from '../demos/react-dnd-test/ReactDndTest';
+import ReactDndHookTest  from '../demos/react-dnd-hook-test/ReactDndHookTest'       
 
 const routes = [
   {
@@ -30,6 +32,17 @@ const routes = [
     component: EmailInfoCard,
     title: '邮箱card',
   },
+  {
+    path:'/reactDndTest/demo',
+    component:ReactDndTest,
+    title: 'ReactDndTest',
+  },
+  {
+    path:'/reactDndHookTest/demo',
+    component:ReactDndHookTest,
+    title: 'reactDndHookTest',
+  }
+  
 ];
 
 export default routes;

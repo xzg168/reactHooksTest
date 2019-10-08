@@ -26,6 +26,8 @@ class NavMenu extends Component<Props, State> {
         { key: '2', path: '/popover/use', menuName: '自定义popover' },
         { key: '3', path: '/customTabs/demo', menuName: '自定义Tabs' },
         { key: '4', path: '/emailInfoCard/demo', menuName: '邮箱card' },
+        { key: '5', path: '/reactDndTest/demo', menuName: 'ReactDndTest' },
+        { key: '6', path: '/reactDndHookTest/demo', menuName: 'ReactDndHookTest' },
       ],
       selectedKeys: [],
       openKeys: [],
